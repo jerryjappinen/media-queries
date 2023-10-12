@@ -1,0 +1,11 @@
+@mixin active-effect() {
+  text-decoration: underline;
+}
+
+@mixin active-effect-selector(key, query, value) {
+  @media (#{query}: #{value}) {
+    .test-#{key} {
+      @include active-effect;
+    }
+  }
+}
