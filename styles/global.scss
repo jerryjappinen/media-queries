@@ -22,9 +22,19 @@ html {
   line-height: 1.25;
 }
 
+body {
+  color: #333;
+  background-color: #fff;
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: #fafafa;
+    background-color: #000;
+  }
+}
+
 * {
   border-style: solid;
-  border-color: #ccc;
+  border-color: currentColor;
   border-width: 0;
 }
 

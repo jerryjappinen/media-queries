@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
-export const queries = {
+export const allMediaQueries = {
   "any-hover": ["none", "hover"],
   "any-pointer": ["none", "coarse", "fine"],
   "aspect-ratio": [1 / 1],

@@ -1,5 +1,5 @@
 <script setup>
-import { queries } from "@/config";
+import { allMediaQueries } from "@/config";
 
 function isVal(value) {
   return typeof value !== "undefined" && value !== null;
@@ -16,7 +16,7 @@ function isVal(value) {
     </p>
 
     <div
-      v-for="(values, property) in queries"
+      v-for="(values, property) in allMediaQueries"
       :key="property"
       :class="`test-${property}`"
       class="test-property-group"
@@ -59,6 +59,7 @@ function isVal(value) {
 .code-sample {
   display: inline-block;
   margin-right: 0.5em;
+  opacity: 0.4;
 }
 
 .tag {
@@ -78,41 +79,10 @@ function isVal(value) {
 
 .test-property-group {
   margin-bottom: 1em;
-  padding: 0.8em 1em 1em 1em;
-  border-radius: 0.25em;
-  border-width: 1px;
+  padding: 1em;
+  // border-radius: 0.25em;
+  border-top-width: 1px;
 }
 
-@include active-effect-selector(any-pointer, none);
-@include active-effect-selector(any-pointer, coarse);
-@include active-effect-selector(any-pointer, fine);
-
-@include active-effect-selector(any-hover, none);
-@include active-effect-selector(any-hover, hover);
-
-@include active-effect-selector(aspect-ratio, 1/1);
-@include active-effect-selector(min-aspect-ratio, 1/1);
-@include active-effect-selector(max-aspect-ratio, 1/1);
-
-@include active-effect-selector(color);
-@include active-effect-selector(color, 1);
-@include active-effect-selector(color, 2);
-@include active-effect-selector(color, 4);
-@include active-effect-selector(color, 8);
-@include active-effect-selector(color, 10);
-@include active-effect-selector(color, 12);
-
-@include active-effect-selector(min-color, 1);
-@include active-effect-selector(min-color, 2);
-@include active-effect-selector(min-color, 4);
-@include active-effect-selector(min-color, 8);
-@include active-effect-selector(min-color, 10);
-@include active-effect-selector(min-color, 12);
-
-@include active-effect-selector(max-color, 1);
-@include active-effect-selector(max-color, 2);
-@include active-effect-selector(max-color, 4);
-@include active-effect-selector(max-color, 8);
-@include active-effect-selector(max-color, 10);
-@include active-effect-selector(max-color, 12);
+@include generate-active-effect-selectors($all-media-queries);
 </style>

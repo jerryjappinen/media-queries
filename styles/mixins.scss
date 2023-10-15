@@ -1,0 +1,34 @@
+@mixin active-effect() {
+  .code-sample {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  .tag-match {
+    display: inline-block;
+  }
+}
+
+@mixin active-effect-selector($property, $value: null) {
+  @if ($value == null) {
+    @media (#{$property}) {
+      .test-#{$property}-void {
+        @include active-effect;
+      }
+    }
+  } @else {
+    @media (#{$property}: #{$value}) {
+      .test-#{$property}-#{$value} {
+        @include active-effect;
+      }
+    }
+  }
+}
+
+@mixin generate-active-effect-selectors($queries) {
+  @each $property, $values in $queries {
+    @each $value in $values {
+      @include active-effect-selector($property, $value);
+    }
+  }
+}

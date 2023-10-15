@@ -1,25 +1,2 @@
-@mixin active-effect() {
-  .code-sample {
-    text-decoration: underline;
-  }
-
-  .tag-match {
-    display: inline-block;
-  }
-}
-
-@mixin active-effect-selector($property, $value: null) {
-  @if ($value == null) {
-    @media (#{$property}) {
-      .test-#{$property}-void {
-        @include active-effect;
-      }
-    }
-  } @else {
-    @media (#{$property}: #{$value}) {
-      .test-#{$property}-#{$value} {
-        @include active-effect;
-      }
-    }
-  }
-}
+@import "./config.scss";
+@import "./mixins.scss";
