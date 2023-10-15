@@ -1,10 +1,9 @@
 <script>
 // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
-
-const queries = {
+const queries = ref({
   "any-hover": ["hover"],
   "any-pointer": ["none", "coarse", "fine"],
-};
+});
 </script>
 
 <template>
