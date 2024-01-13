@@ -1,18 +1,32 @@
 <script setup>
 import { allMediaQueries } from "@/config";
 
+const showMatchingOnly = ref(false);
+
 function isVal(value) {
   return typeof value !== "undefined" && value !== null;
 }
 </script>
 
 <template>
-  <div class="app">
+  <div
+    :class="{
+      'app-matching-only': showMatchingOnly,
+    }"
+    class="app"
+  >
     <h1>Browser media query tester</h1>
 
     <p>
       Use this page to test which media queries your current browser matches
       with.
+    </p>
+
+    <p>
+      <label
+        ><input type="checkbox" v-model="showMatchingOnly" /> Show matching
+        only</label
+      >
     </p>
 
     <div
@@ -37,8 +51,8 @@ function isVal(value) {
         class="test-property-value"
       >
         <code class="code-sample"
-          >@media ({{ property }}{{ isVal(value) ? `: ${value}` : "" }}) { /*
-          ... */ }</code
+          >@media ({{ property }}{{ isVal(value) ? `: ${value}` : "" }})
+          {}</code
         >
         <span class="tag tag-match">Match</span>
       </div>
@@ -79,7 +93,8 @@ function isVal(value) {
 
 .test-property-group {
   margin-bottom: 1em;
-  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   // border-radius: 0.25em;
   border-top-width: 1px;
 }

@@ -2,9 +2,9 @@
 export const allMediaQueries = {
   "any-hover": ["none", "hover"],
   "any-pointer": ["none", "coarse", "fine"],
-  "aspect-ratio": [1 / 1],
-  "min-aspect-ratio": [1 / 1],
-  "max-aspect-ratio": [1 / 1],
+  "aspect-ratio": ["1/1"],
+  "min-aspect-ratio": ["1/1"],
+  "max-aspect-ratio": ["1/1"],
   color: [null, 1, 2, 3, 4, 8, 10, 12], // bits
   "min-color": [null, 1, 2, 4, 8, 10, 12], // bits
   "max-color": [null, 1, 2, 4, 8, 10, 12], // bits
